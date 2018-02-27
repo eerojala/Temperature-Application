@@ -2,5 +2,7 @@ POST http://localhost:3001/api/locations
 content-type: application/json
 
 {
-    "name": "Tokyo"
+    "name": "Tokyo",
+    "latitude": "35.6584421",
+    "longitude": "139.7328635"
 }

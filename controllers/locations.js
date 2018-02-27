@@ -15,6 +15,10 @@ locationsRouter.post('/', async (request, response) => {
             return response.status(400).json({ error: 'Missing name' })
         }
 
+        if (!location.latitude || !location.longitude) {
+            return response.status(400).json({ error: 'Missing coordinates'})
+        }
+
         await location.save()
         
         response.json(Location.format(location))
