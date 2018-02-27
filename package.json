@@ -1,0 +1,30 @@
+{
+  "name": "temperature-application",
+  "version": "1.0.0",
+  "description": "Temperature observation application backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eerojala/Temperature-Application.git"
+  },
+  "author": "Eero Ojala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eerojala/Temperature-Application/issues"
+  },
+  "homepage": "https://github.com/eerojala/Temperature-Application#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7"
+  },
+  "devDependencies": {
+    "cors": "^2.8.4",
+    "nodemon": "^1.17.1"
+  }
+}

@@ -1,0 +1,6 @@
+POST http://localhost:3001/api/locations
+content-type: application/json
+
+{
+    "name": "Tokyo"
+}
