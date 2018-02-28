@@ -2,7 +2,7 @@ POST http://localhost:3001/api/observations
 content-type: application/json
 
 {
-    "temperature": "-12",
-    "date": "2018-02-27T23:35:08.130Z",
+    "temperature": "-2.6",
+    "date": "2018-02-26T23:35:08.130Z",
     "location": "5a95e4755e684613fc743710"
 }
