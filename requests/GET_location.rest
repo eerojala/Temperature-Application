@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/locations/5a95e4755e684613fc743710

@@ -9,6 +9,21 @@ locationsRouter.get('/', async (request, response) => {
   response.json(locations.map(Location.format))
 })
 
+locationsRouter.get('/:id', async(request, response) => {
+  try {
+    const location = await Location.findById(request.params.id)
+
+    if (location) {
+      response.json(Location.format(location))
+    } else {
+      response.status(404).end()
+    }
+  } catch (exception) {
+    console.log(exception)
+    response.status(400).send({ error: 'Malformatted id' })
+  }
+})
+
 locationsRouter.post('/', async (request, response) => {
   try {
     const location = new Location(request.body)

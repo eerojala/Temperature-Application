@@ -10,6 +10,21 @@ observationsRouter.get('/', async (request, response) => {
   response.json(observations.map(Observation.format))
 })
 
+observationsRouter.get('/:id', async (request, response) => {
+  try {
+    const observation = await Observation.findById(request.params.id)
+
+    if (observation) {
+      response.json(Observation.format(observation))
+    } else {
+      response.status(404).end()
+    }
+  } catch (exception) {
+    console.log(exception)
+    response.status(400).send({ error: 'Malformatted id' })
+  }
+})
+
 observationsRouter.post('/', async (request, response) => {
   try {
     const observation = new Observation(request.body)

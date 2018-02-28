@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/observations/5a95ef72e056351168b75b24
