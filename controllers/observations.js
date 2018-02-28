@@ -12,7 +12,9 @@ observationsRouter.get('/', async (request, response) => {
 
 observationsRouter.get('/:id', async (request, response) => {
   try {
-    const observation = await Observation.findById(request.params.id)
+    const observation = await Observation
+      .findById(request.params.id)
+      .populate('location', { observations: 0, __v: 0 })
 
     if (observation) {
       response.json(Observation.format(observation))

@@ -11,7 +11,9 @@ locationsRouter.get('/', async (request, response) => {
 
 locationsRouter.get('/:id', async(request, response) => {
   try {
-    const location = await Location.findById(request.params.id)
+    const location = await Location
+      .findById(request.params.id)
+      .populate('observations', { __v: 0, location: 0 })
 
     if (location) {
       response.json(Location.format(location))
