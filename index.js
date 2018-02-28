@@ -8,6 +8,7 @@ const middleWare = require('./utils/middleware')
 const mongoose = require('mongoose')
 
 const locationsRouter = require('./controllers/locations')
+const observationsRouter = require('./controllers/observations')
 
 const config = require('./utils/config')
 
@@ -29,6 +30,7 @@ app.use(middleWare.logger)
 
 // Controllers
 app.use('/api/locations', locationsRouter)
+app.use('/api/observations', observationsRouter)
 
 // Error middleware
 app.use(middleWare.error)
