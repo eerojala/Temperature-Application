@@ -30,8 +30,12 @@ observationsRouter.get('/:id', async (request, response) => {
 observationsRouter.post('/', async (request, response) => {
   try {
     const observation = new Observation(request.body)
+    console.log(observation)
 
-    if (isNaN(observation.temperature) || observation.temperature < -90 || observation.temperature > 60) {
+    const notANumber = isNaN(observation.temperature) || observation.temperature === null
+    const notFeasible = observation.temperature < -90 || observation.temperature > 60
+
+    if (notANumber || notFeasible ) {
       return response.status(400).json({ error: 'Invalid temperature' })
     }
 
@@ -54,7 +58,7 @@ observationsRouter.post('/', async (request, response) => {
     response.json(Observation.format(observation))
   } catch (exception) {
     console.log(exception)
-    response.sttatus(500).json({ error: 'Something went wrong...' })
+    response.status(500).json({ error: 'Something went wrong...' })
   }
 })
 
