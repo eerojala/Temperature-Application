@@ -31,7 +31,7 @@ observationsRouter.post('/', async (request, response) => {
   try {
     const observation = new Observation(request.body)
 
-    if (isNaN(observation.temperature) || observation.temperature < -100 || observation.temperature > 60) {
+    if (isNaN(observation.temperature) || observation.temperature < -90 || observation.temperature > 60) {
       return response.status(400).json({ error: 'Invalid temperature' })
     }
 
