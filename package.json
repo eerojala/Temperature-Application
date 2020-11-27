@@ -21,7 +21,7 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
-    "mongoose": "^5.0.7"
+    "mongoose": "^5.10.16"
   },
   "devDependencies": {
     "cors": "^2.8.4",
