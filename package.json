@@ -20,7 +20,7 @@
   "homepage": "https://github.com/eerojala/Temperature-Application#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "mongoose": "^5.10.16",
     "cors": "^2.8.4"
   },
